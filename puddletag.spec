@@ -11,6 +11,7 @@ BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 Requires:	python-PyQt4
 Requires:	python-configobj
+Requires:	python-devel-tools
 Requires:	python-mutagen
 Requires:	python-pyparsing
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
