@@ -7,8 +7,12 @@ Group:		X11/Applications/Sound
 Source0:	http://downloads.sourceforge.net/puddletag/%{name}-%{version}.tar.gz
 # Source0-md5:	87240a3d97f9e9fe217d58f950403074
 URL:		http://puddletag.sourceforge.net
-BuildRequires:	rpm-pythonprov
 BuildRequires:	python-devel
+BuildRequires:	rpm-pythonprov
+Requires:	python-PyQt4
+Requires:	python-configobj
+Requires:	python-mutagen
+Requires:	python-pyparsing
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,8 +46,8 @@ python setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
-%py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
-%py_comp $RPM_BUILD_ROOT%{py_sitedir}
+%py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
+%py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_postclean
 
 %clean
